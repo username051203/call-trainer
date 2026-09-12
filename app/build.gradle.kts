@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+val groqApiKey: String = System.getenv("GROQ_API_KEY") ?: ""
+
 android {
     namespace = "com.nic.calltrainer"
     compileSdk = 34
@@ -13,6 +15,11 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "0.1"
+        buildConfigField("String", "GROQ_API_KEY", "\"$groqApiKey\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
