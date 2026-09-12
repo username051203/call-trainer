@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 object GroqClient {
 
     private const val ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
-    private const val MODEL = "llama-3.3-70b-versatile"
+    private const val MODEL = "openai/gpt-oss-20b"
 
     private val client = OkHttpClient.Builder()
         .connectTimeout(10, TimeUnit.SECONDS)
